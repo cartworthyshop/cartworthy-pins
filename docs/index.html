@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CartWorthy — Gift picks worth your cart</title>
+  <meta name="description" content="Gift picks worth your cart. Black Friday kitchen gifts, gifts under $50, and car upgrades under $30.">
+  <style>
+    @font-face {
+      font-family: "Archivo Black";
+      src: url("fonts/ArchivoBlack-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --mustard: #E8B500;
+      --cream: #F7F2E6;
+      --charcoal: #22211F;
+      --ink: #1C1B19;
+      --soft: #3A3732;
+      --card: #FFFDF8;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .bar {
+      height: 14px;
+      background: var(--mustard);
+    }
+
+    .wrap {
+      width: min(100%, 32rem);
+      margin: 0 auto;
+      padding: 1.75rem 1.25rem 2.5rem;
+    }
+
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0;
+      font-family: "Archivo Black", var(--sans);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      line-height: 1;
+    }
+
+    .mark-dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 2px;
+      background: var(--mustard);
+      flex: none;
+    }
+
+    .tagline {
+      margin: 1.35rem 0 0.55rem;
+      font-family: "Archivo Black", var(--sans);
+      font-size: clamp(2rem, 8vw, 2.6rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+
+    .disclosure {
+      margin: 0;
+      max-width: 22rem;
+      color: var(--soft);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .section {
+      margin-top: 2.25rem;
+    }
+
+    .section h2 {
+      margin: 0 0 0.85rem;
+      font-family: "Archivo Black", var(--sans);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .section h2 span {
+      display: block;
+      width: 2.25rem;
+      height: 6px;
+      margin-bottom: 0.55rem;
+      border-radius: 99px;
+      background: var(--mustard);
+    }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      min-height: 4.75rem;
+      padding: 1rem 1.05rem;
+      border: 2px solid var(--charcoal);
+      border-radius: 1.1rem;
+      background: var(--card);
+      color: var(--charcoal);
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--charcoal);
+    }
+
+    .product:hover,
+    .product:focus-visible {
+      background: var(--mustard);
+      outline: none;
+    }
+
+    .product:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--charcoal);
+    }
+
+    .name {
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .paid {
+      font-size: 0.78rem;
+      font-weight: 650;
+      color: var(--soft);
+    }
+
+    .note {
+      margin: 2rem 0 0;
+      color: var(--soft);
+      font-size: 0.85rem;
+    }
+
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--charcoal);
+      color: var(--cream);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .social a:hover,
+    .social a:focus-visible {
+      background: var(--ink);
+      color: var(--mustard);
+      outline: 3px solid var(--mustard);
+      outline-offset: 2px;
+    }
+
+    @media (min-width: 40rem) {
+      .wrap { padding-top: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar" aria-hidden="true"></div>
+  <main class="wrap">
+    <p class="wordmark">CARTWORTHY <span class="mark-dot" aria-hidden="true"></span></p>
+    <h1 class="tagline">Gift picks worth your cart.</h1>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+
+    <section class="section" aria-labelledby="kitchen">
+      <h2 id="kitchen"><span aria-hidden="true"></span>Black Friday kitchen gifts</h2>
+      <div class="products">
+        <a class="product" href="https://www.amazon.com/dp/B0CSZ7WBYW" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">Ninja Air Fryer Pro AF141</span>
+          <span class="meta"><span class="price">$89.99</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B08C96BG9H" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">De'Longhi Stilosa espresso</span>
+          <span class="meta"><span class="price">$149.95</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B0764HS4SL" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">Fullstar veggie chopper</span>
+          <span class="meta"><span class="price">$27.99</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B00HEZ888K" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">OXO Good Grips garlic press</span>
+          <span class="meta"><span class="price">$20.09</span><span class="paid">(paid link)</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="under50">
+      <h2 id="under50"><span aria-hidden="true"></span>Gifts under $50</h2>
+      <div class="products">
+        <a class="product" href="https://www.amazon.com/dp/B0764HS4SL" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">Fullstar chopper</span>
+          <span class="meta"><span class="price">$27.99</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B00HEZ888K" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">OXO garlic press</span>
+          <span class="meta"><span class="price">$20.09</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B0F6FT397Y" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">IRIS USA storage bins 4-pack</span>
+          <span class="meta"><span class="price">$29.99</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B0C7VJS86J" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">andobil car phone mount</span>
+          <span class="meta"><span class="price">$22.94</span><span class="paid">(paid link)</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="car">
+      <h2 id="car"><span aria-hidden="true"></span>Car upgrades under $30</h2>
+      <div class="products">
+        <a class="product" href="https://www.amazon.com/dp/B0C7VJS86J" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">andobil mount</span>
+          <span class="meta"><span class="price">$22.94</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B0CS3B7MD8" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">AstroAI L7 tire inflator</span>
+          <span class="meta"><span class="price">$21.83</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B06ZY896ZM" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">ThisWorx handheld car vacuum</span>
+          <span class="meta"><span class="price">$20.99</span><span class="paid">(paid link)</span></span>
+        </a>
+        <a class="product" href="https://www.amazon.com/dp/B07W46BX31" target="_blank" rel="nofollow sponsored noopener">
+          <span class="name">NOCO GENIUS1 battery charger</span>
+          <span class="meta"><span class="price">$29.95</span><span class="paid">(paid link)</span></span>
+        </a>
+      </div>
+    </section>
+
+    <p class="note">Prices as of Nov 2026, may change</p>
+    <nav class="social" aria-label="CartWorthy on social">
+      <a href="https://www.pinterest.com/cartworthycorp/" target="_blank" rel="noopener">Pinterest</a>
+      <a href="https://www.instagram.com/cartworthy.shop/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@cartworthyshop" target="_blank" rel="noopener">TikTok</a>
+    </nav>
+  </main>
+  <div class="bar" aria-hidden="true"></div>
+</body>
+</html>
